@@ -1,0 +1,104 @@
+@import "vars";
+@import "node_modules/kube/src/_scss/_variables.scss";
+@import "node_modules/kube/src/_scss/_mixins.scss";
+
+.cover {
+  position: relative;
+  background-image: url('../../images/cover-mask.svg');
+  background-position: center;
+  background-size: cover;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+
+    @if variable-exists(cover-colour) {
+      background-color: $cover-colour;
+    } @else {
+      background-color: $primary-colour;
+    }
+    @if variable-exists(cover-image) {
+      background-image: url('#{$cover-image}');
+      background-position: center;
+
+      @if variable-exists(cover-size) {
+        background-size: #{$cover-size};
+      } @else {
+        background-size: cover;
+      }
+    }
+  }
+
+  .title,
+  .sub-title {
+    background-color: $accent-colour;
+    color: $color-inverted;
+
+    span[class^='word'],
+    span[class*='word'] {
+      background-color: $accent-colour;
+      position: relative;
+      display: inline-block;
+
+      &:before {
+        content: '';
+        position: absolute;
+        background-color: $accent-colour;
+        top: -15px;
+        right: -20px;
+        bottom: -15px;
+        left: -20px;
+        z-index: -1;
+      }
+    }
+  }
+
+  .authors {
+    $authors-bg: $primary-colour;
+    @if variable-exists(cover-colour) {
+      $authors-bg: $cover-colour;
+    }
+
+    span[class^='word'],
+    span[class*='word'] {
+      background-color: $authors-bg;
+      position: relative;
+      display: inline-block;
+
+      &:before {
+        content: '';
+        position: absolute;
+        background-color: $authors-bg;
+        top: -15px;
+        right: -20px;
+        bottom: -15px;
+        left: -20px;
+        z-index: -1;
+      }
+    }
+  }
+
+  .title,
+  .sub-title,
+  .authors {
+    color: $color-inverted;
+
+    &[aria-label] {
+      background-color: transparent;
+    }
+  }
+
+  .logos {
+    .logo {
+      background-color: #fff;
+    }
+    svg {
+      fill: $accent-colour;
+    }
+  }
+}
