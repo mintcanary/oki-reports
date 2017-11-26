@@ -1,6 +1,8 @@
 @import "vars";
-@import "node_modules/kube/src/_scss/_variables.scss";
-@import "node_modules/kube/src/_scss/_mixins.scss";
+
+a {
+  color: $primary-colour;
+}
 
 .cover {
   position: relative;
@@ -37,7 +39,7 @@
   .title,
   .sub-title {
     background-color: $accent-colour;
-    color: $color-inverted;
+    color: #fff;
 
     span[class^='word'],
     span[class*='word'] {
@@ -60,6 +62,8 @@
 
   .authors {
     $authors-bg: $primary-colour;
+    color: #fff;
+
     @if variable-exists(cover-colour) {
       $authors-bg: $cover-colour;
     }
@@ -86,7 +90,6 @@
   .title,
   .sub-title,
   .authors {
-    color: $color-inverted;
 
     &[aria-label] {
       background-color: transparent;
@@ -101,4 +104,22 @@
       fill: $accent-colour;
     }
   }
+}
+
+.component {
+  &.callout {
+    background-color: rgba($primary-colour,0.2);
+
+    @media (min-width: $md) {
+      background-color: #fff;
+
+      .copy {
+        outline-color: $primary-colour;
+      }
+    }
+  }
+}
+
+.pull-quote {
+  color: $primary-colour;
 }

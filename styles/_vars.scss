@@ -1,4 +1,29 @@
-$text-font-family: 'Lora', serif !default;
-$headings-font-family: 'Lato', sans-serif !default;
+// layout
+$grid-gutter: 20px;
+
+$sm: 768px;
+$md: 1024px;
+$lg: 1200px;
+
+// colours
 $primary-colour: #61BC30;
 $accent-colour: #2D2D2D;
+
+// type
+$typl8-font-family: 'Lato', sans-serif;
+$typl8-paragraph-spacing: true;
+
+$typl8-scale: (
+  typl8-tera: 16*6.5,
+  typl8-giga: 16*5,
+  typl8-mega: 16*4,
+  typl8-alpha: 16*3.3333,
+  typl8-beta: 16*2.6667,
+  typl8-gamma: 16*2,
+  typl8-delta: 16*1.3333,
+  typl8-epsilon: 16*1.1667,
+  typl8-zeta: 16,
+);
+
+$typl8-pull-quote-color: $primary-colour;
+$typl8-cite-font-size: 0.8em;

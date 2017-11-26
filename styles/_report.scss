@@ -1,13 +1,129 @@
+html {
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
 .container {
   max-width: $lg;
   margin-left: auto;
   margin-right: auto;
 }
 
+section {
+  padding-top: $grid-gutter;
+  padding-bottom: $grid-gutter;
+}
+
+.component {
+  padding-top: $grid-gutter;
+  padding-bottom: $grid-gutter;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $sm;
+
+  @media (min-width: $lg) {
+    display: flex;
+    max-width: $lg;
+    position: relative;
+
+    &:before,
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 50vw;
+    }
+
+    &:before {
+      right: 100%;
+    }
+    &:after {
+      left: 100%;
+    }
+  }
+
+  & > * {
+    padding-left: $grid-gutter;
+    padding-right: $grid-gutter;
+    box-sizing: border-box;
+
+    &.copy {
+      @media (min-width: $lg) {
+        width: 60%;
+      }
+    }
+
+    &.footnotes {
+      font-size: $typl8-small-print-size;
+      opacity: 0.75;
+
+      @media (min-width: $lg) {
+        width: 20%;
+        align-self: flex-end;
+      }
+
+      li {
+        margin-top: 0.5em;
+      }
+    }
+  }
+
+  &.text {
+    @media (min-width: $lg) {
+      justify-content: flex-end;
+    }
+  }
+  &.callout {
+    .copy {
+      @media (min-width: $md) {
+        outline: 10px dashed $typl8-heading-color;
+        outline-offset: 20px;
+      }
+    }
+  }
+
+  .blockquote {
+    font-style: italic;
+
+    blockquote {
+      margin-left: 0;
+      margin-right: 0;
+
+      @include typl8-blockquote('-');
+      figcaption {
+        font-size: $typl8-cite-font-size;
+      }
+    }
+
+  }
+
+  .pull-quote {
+    @include typl8-pull-quotes(
+      $typl8-pull-quote-fontsize,
+      1,
+      $typl8-pull-quote-color
+    );
+    @media (min-width: $lg) {
+      padding-left: 0;
+      font-size: 1.2em;
+
+      blockquote {
+        margin-left: 0;
+      }
+
+      &:before {
+        left: -0.75em;
+      }
+    }
+  }
+}
+
 .cover {
-  font-family: $headings-font-family;
-  padding-left: $grid-gutter;
-  padding-right: $grid-gutter;
 
   a {
     color: inherit;
@@ -22,11 +138,21 @@
     .date {
       flex-grow: 1;
       padding-top: 15px;
+      padding-left: $grid-gutter;
+      padding-right: $grid-gutter;
     }
     .logos {
       padding-top: 6vh;
       padding-bottom: 30px;
       margin-left: -10px;
+      padding-left: $grid-gutter;
+      padding-right: $grid-gutter;
+      font-size: 14px;
+
+      @media (min-width: $sm) {
+        display: flex;
+        align-items: center;
+      }
 
       .logo {
         display: block;
@@ -36,7 +162,17 @@
         &.oki {
           width: 172px;
         }
+
+        &.hewlett {
+          width: 116px;
+        }
       }
+
+      span {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
       svg {
         fill: currentColor;
         width: 100%;
@@ -57,6 +193,8 @@
     line-height: 1;
     position: relative;
     z-index: 1;
+    padding-left: $grid-gutter;
+    padding-right: $grid-gutter;
   }
 
   .sub-title{
@@ -65,18 +203,28 @@
 
   .title {
     font-weight: 900;
-    font-size: 3.5vw;
-    letter-spacing: 0.05em
+    letter-spacing: 0.05em;
+    font-size: 2em;
+
+    @media (min-width: $sm) {
+      font-size: 3.5vw;
+    }
   }
 
   .sub-title {
     margin-top: 10vh;
-    font-size: 2.5vw;
+
+    @media (min-width: $sm) {
+      font-size: 2.5vw;
+    }
   }
 
   .authors {
     margin-top: 30px;
-    font-size: 1.5vw;
+
+    @media (min-width: $sm) {
+      font-size: 1.5vw;
+    }
 
     .author {
       font-weight: bold;
