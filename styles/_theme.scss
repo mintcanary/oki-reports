@@ -6,7 +6,8 @@ a {
 
 .cover {
   position: relative;
-  background-image: url('../../images/cover-mask.svg');
+  //background-image: url('../../images/cover-mask.svg');
+  background-image: url('../../images/cover-mask.png'); // use PNG until find a fallback for IE
   background-position: center;
   background-size: cover;
 
