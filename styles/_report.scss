@@ -1,5 +1,6 @@
 html {
   overflow-x: hidden;
+  counter-reset: footnotes;
 }
 
 a {
@@ -68,6 +69,15 @@ section {
 
       li {
         margin-top: 0.5em;
+        list-style: none;
+        position: relative;
+
+        &:before {
+          content: counter(footnotes) ".\00a0";
+          counter-increment: footnotes;
+          position: absolute;
+          right: 100%;
+        }
       }
     }
   }
