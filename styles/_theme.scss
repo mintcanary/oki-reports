@@ -4,6 +4,12 @@ a {
   color: $primary-colour;
 }
 
+.footnotes {
+  a:last-child {
+    color: $primary-colour;  
+  }
+}
+
 .cover {
   position: relative;
   //background-image: url('../../images/cover-mask.svg');

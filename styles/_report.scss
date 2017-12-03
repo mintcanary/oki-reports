@@ -67,6 +67,15 @@ section {
         align-self: flex-end;
       }
 
+      a {
+        color: inherit;
+        text-decoration: underline;
+
+        &:last-child {
+          text-decoration: none;
+        }
+      }
+
       li {
         margin-top: 0.5em;
         list-style: none;
