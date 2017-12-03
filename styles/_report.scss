@@ -337,12 +337,23 @@ section {
 
     .date {
       flex-grow: 1;
-      padding-top: 15px;
-      padding-left: $grid-gutter;
-      padding-right: $grid-gutter;
+
+      p {
+        display: block;
+        padding: $grid-gutter/2 $grid-gutter;
+      }
+
+      @media (min-width: $sm) {
+        padding-top: 15px;
+        padding-left: $grid-gutter;
+        padding-right: $grid-gutter;
+
+        p {
+          padding: 0;
+        }
+      }
     }
     .logos {
-      padding-top: 6vh;
       padding-bottom: 30px;
       margin-left: -10px;
       padding-left: $grid-gutter;
@@ -350,6 +361,7 @@ section {
       font-size: 14px;
 
       @media (min-width: $sm) {
+        padding-top: 6vh;
         display: flex;
         align-items: center;
       }
@@ -412,9 +424,8 @@ section {
   }
 
   .sub-title {
-    margin-top: 10vh;
-
     @media (min-width: $sm) {
+      margin-top: 10vh;
       font-size: 2.5vw;
     }
   }
