@@ -337,21 +337,9 @@ section {
 
     .date {
       flex-grow: 1;
-
-      p {
-        display: block;
-        padding: $grid-gutter/2 $grid-gutter;
-      }
-
-      @media (min-width: $sm) {
-        padding-top: 15px;
-        padding-left: $grid-gutter;
-        padding-right: $grid-gutter;
-
-        p {
-          padding: 0;
-        }
-      }
+      padding-top: 15px;
+      padding-left: $grid-gutter;
+      padding-right: $grid-gutter;
     }
     .logos {
       padding-bottom: 80px;

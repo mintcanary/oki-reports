@@ -45,18 +45,6 @@ a {
     }
   }
 
-  .date {
-    p {
-      background-color: $accent-colour;
-      color: #fff;
-
-      @media (min-width: $sm) {
-        background-color: transparent;
-        color: inherit;
-      }
-    }
-  }
-
   .title,
   .sub-title {
     background-color: $accent-colour;
