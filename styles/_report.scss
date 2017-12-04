@@ -354,7 +354,7 @@ section {
       }
     }
     .logos {
-      padding-bottom: 30px;
+      padding-bottom: 80px;
       margin-left: -10px;
       padding-left: $grid-gutter;
       padding-right: $grid-gutter;
@@ -364,6 +364,7 @@ section {
         padding-top: 6vh;
         display: flex;
         align-items: center;
+        padding-bottom: 30px;
       }
 
       .logo {
