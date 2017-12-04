@@ -6,7 +6,7 @@ a {
 
 .footnotes {
   a:last-child {
-    color: $primary-colour;  
+    color: $primary-colour;
   }
 }
 
@@ -17,28 +17,30 @@ a {
   background-position: center;
   background-size: cover;
 
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: -1;
+  @media (min-width: $sm) {
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
 
-    @if variable-exists(cover-colour) {
-      background-color: $cover-colour;
-    } @else {
-      background-color: $primary-colour;
-    }
-    @if variable-exists(cover-image) {
-      background-image: url('#{$cover-image}');
-      background-position: center;
-
-      @if variable-exists(cover-size) {
-        background-size: #{$cover-size};
+      @if variable-exists(cover-colour) {
+        background-color: $cover-colour;
       } @else {
-        background-size: cover;
+        background-color: $primary-colour;
+      }
+      @if variable-exists(cover-image) {
+        background-image: url('#{$cover-image}');
+        background-position: center;
+
+        @if variable-exists(cover-size) {
+          background-size: #{$cover-size};
+        } @else {
+          background-size: cover;
+        }
       }
     }
   }
