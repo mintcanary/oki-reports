@@ -3,15 +3,15 @@ $(document).ready(function() {
 
   $(window).scroll(function(){
     if ($(window).scrollTop() >= $(window).height()) {
-      $('.contents').addClass('scrolled-to');
+      $('.contents nav').addClass('scrolled-to');
     }
     else {
-      $('.contents').removeClass('scrolled-to');
+      $('.contents nav').removeClass('scrolled-to');
     }
   });
 
   $('.toggle-contents').on('click', function(e) {
-    $('.contents').toggleClass("show");
+    $('.contents nav').toggleClass("show");
     e.preventDefault();
   });
 
