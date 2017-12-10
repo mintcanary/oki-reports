@@ -56,8 +56,20 @@ module.exports = function(grunt) {
       includes: {
         files: ['understanding-the-drivers-of-open-licence-proliferation/index.html', 'governing-by-rankings/index.html'],
         tasks: ['includes']
+      },
+      options: {
+        livereload: true,
       }
-		}
+    },
+
+    connect: {
+      server: {
+        options: {
+          base: 'docs',
+          livereload: true
+        }
+      }
+    }
   });
 
   // Load the plugins
@@ -65,7 +77,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-postcss');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-includes');
+  grunt.loadNpmTasks('grunt-contrib-connect');
 
-  grunt.registerTask('default',['watch']);
+  grunt.registerTask('default',['connect', 'watch']);
 
 };
