@@ -340,6 +340,7 @@ section {
       padding-top: 15px;
       padding-left: $grid-gutter;
       padding-right: $grid-gutter;
+      margin-bottom: $grid-gutter;
     }
     .logos {
       padding-bottom: 80px;
@@ -366,6 +367,15 @@ section {
 
         &.hewlett {
           width: 116px;
+        }
+      }
+
+      .licence {
+        padding: 10px;
+
+        @media (min-width: $sm) {
+          flex-grow: 1;
+          text-align: right;
         }
       }
 
