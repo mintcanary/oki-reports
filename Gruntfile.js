@@ -18,7 +18,7 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           cwd: '.',
-          src: ['understanding-the-drivers-of-open-licence-proliferation/style.scss', 'governing-by-rankings/style.scss'],
+          src: ['avoiding-data-use-silos/style.scss', 'governing-by-rankings/style.scss'],
           dest: 'docs/css',
           ext: '.css'
         }]
@@ -39,7 +39,7 @@ module.exports = function(grunt) {
 
     includes: {
       files: {
-        src: ['understanding-the-drivers-of-open-licence-proliferation/index.html', 'governing-by-rankings/index.html'], // Source files
+        src: ['avoiding-data-use-silos/index.html', 'governing-by-rankings/index.html'], // Source files
         dest: 'docs', // Destination directory
         cwd: '.',
         options: {
@@ -54,7 +54,7 @@ module.exports = function(grunt) {
 				tasks: ['sass', 'postcss:dist']
 			},
       includes: {
-        files: ['understanding-the-drivers-of-open-licence-proliferation/index.html', 'governing-by-rankings/index.html'],
+        files: ['avoiding-data-use-silos/index.html', 'governing-by-rankings/index.html'],
         tasks: ['includes']
       },
       options: {
