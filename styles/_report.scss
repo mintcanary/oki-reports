@@ -369,24 +369,24 @@ section {
     }
 
   }
+}
 
-  .pull-quote {
-    @include typl8-pull-quotes(
-      $typl8-pull-quote-fontsize,
-      1,
-      $typl8-pull-quote-color
-    );
-    @media (min-width: $lg) {
-      padding-left: 0;
-      font-size: 1.2em;
+.pull-quote {
+  @include typl8-pull-quotes(
+    $typl8-pull-quote-fontsize,
+    1,
+    $typl8-pull-quote-color
+  );
+  @media (min-width: $lg) {
+    padding-left: 0;
+    font-size: 1.2em;
 
-      blockquote {
-        margin-left: 0;
-      }
+    blockquote {
+      margin-left: 0;
+    }
 
-      &:before {
-        left: -0.75em;
-      }
+    &:before {
+      left: -0.75em;
     }
   }
 }
@@ -573,7 +573,7 @@ table td {
 table th {
   text-align: left;
   text-transform: uppercase;
-  background-color: $accent-colour;
+  background-color: $typl8-copy-color;
   color: #fff;
 }
 

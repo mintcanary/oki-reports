@@ -1,3 +1,5 @@
+$primary-colour: #61BC30 !default;
+$accent-colour: #2D2D2D !default;
 @import "vars";
 
 a {
@@ -12,7 +14,7 @@ a {
 
 .cover {
   position: relative;
-  
+
   @media (min-width: $sm) {
     //background-image: url('../../images/cover-mask.svg');
     background-image: url('../../images/cover-mask.png'); // use PNG until find a fallback for IE
@@ -132,4 +134,13 @@ a {
 
 .pull-quote {
   color: $primary-colour;
+
+  &:before,
+  &:after {
+    color: $primary-colour;
+  }
+}
+
+table th {
+  background-color: $accent-colour;
 }
