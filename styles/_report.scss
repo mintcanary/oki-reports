@@ -260,8 +260,16 @@ section {
   }
 
   &.text {
-    p + h3 {
-      padding-top: $grid-gutter;
+    p, figure, ul, ol {
+      & + h3 {
+        padding-top: $grid-gutter;
+      }
+      & + h4 {
+        padding-top: $grid-gutter*0.75;
+      }
+      & + h5 {
+        padding-top: $grid-gutter*0.5;
+      }
     }
   }
   &.callout {
@@ -305,6 +313,10 @@ section {
       padding-right: 0;
       text-align: left;
       margin-bottom: $grid-gutter;
+    }
+
+    & > figure {
+      margin-top: 0;
     }
 
     .image {

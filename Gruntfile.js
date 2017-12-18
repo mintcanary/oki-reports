@@ -9,7 +9,7 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           cwd: '.',
-          src: ['styles/base.scss'],
+          src: ['styles/base.scss', 'styles/prism.scss'],
           dest: 'docs/css',
           ext: '.css'
         }]
