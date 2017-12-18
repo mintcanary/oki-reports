@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Spatial Data Package investigation</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles/base.css">
+    <link rel="stylesheet" href="../css/spatial-data-package-investigation/style.css">
+    <link rel="stylesheet" href="../css/styles/prism.css">
+  </head>
+  <body>
+    <header class="cover">
+      <div class="container">
+        <div class="date">
+          December 2017
+        </div>
+        <div class="copy">
+          <h1 class="title">Spatial Data Package investigation</h1>
+          <p class="sub-title">An investigation into whether there is a need for a "Spatial Data Package" specification within the Frictionless Data ecosystem</p>
+          <p class="authors"><a class="author">Steve Bennett</a></p>
+        </div>
+        <div class="logos">
+          <a class="oki logo">
+            include "../oki.svg"
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <section>
+      <div class="component text">
+        <div class="copy">
+          <h2>Summary</h2>
+          <p>
+            We investigate whether there is a need for a "Spatial Data Package" specification within the Frictionless Data ecosystem. Specifically:
+          </p>
+          <ul>
+            <li>
+              The general state of open spatial data and popular file formats.
+            </li>
+            <li>
+              Problems and pain points in sharing open spatial data.
+            </li>
+            <li>
+              If, and how, new Data Package specifications could help solve these problems.
+            </li>
+          </ul>
+        </div>
+
+        <div class="footnotes">
+        </div>
+      </div>
+
+      <div class="component callout text">
+        <div class="copy">
+          <h3>We conclude:</h3>
+          <ul>
+            <li>
+              There is significant friction in the uptake of spatial data by non-GIS-expert users. This problem can be addressed by two adding a small amount of metadata, and some data processing conventions to existing Data Package standards.
+              <ul>
+                <li>
+                  Tabular Data Package, with "location" resource attribute, for datasets consisting of points (or rather, rows with point locations).
+                </li>
+                <li>
+                  Data Package containing GeoJSON files, with "location" resource attribute, for vector datasets of line and polygon data.
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="footnotes">
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="component text">
+        <div class="copy">
+          <h2>Introduction</h2>
+          <p>
+            Geospatial data – data relating to locations on the Earth’s surface – makes up a significant proportion of all the data regularly shared on open data platforms. It is frequently of immediate, direct value and datasets such as property or government administrative boundaries are sought out even by users with little background in geospatial data.
+          </p>
+        </div>
+        <div class="footnotes">
+          <ol class="foot-notes">
+            <li id="fn-item1">
+              <a href="https://www.w3.org/TR/sdw-bp/#dfn-coverage">https://www.w3.org/TR/sdw-bp/#dfn-coverage</a> <a href="#fn-return1">↩</a>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="component text">
+        <div class="copy">
+          <h2>Can Frictionless Data help?</h2>
+          <p>When considering new specifications we have to weigh up:</p>
+
+          <h3>Data Package workflows to consider</h3>
+        </div>
+        <div class="footnotes">
+
+        </div>
+      </div>
+      <div class="component figure">
+        <table>
+          <thead>
+            <tr>
+              <th>Tool category</th>
+              <th>Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                Libraries that load a DP into a programming environment for analysis.
+              </td>
+              <td>
+                Datapackage-rb, tableschema-py and many others
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="component text">
+        <div class="copy">
+          <h3>Recommendations</h3>
+          <h4>Location metadata</h4>
+          <p>
+            Given that location information can exist in conjunction with other kinds of data, we recommend that two types of location metadata be included in Data Package descriptors where appropriate:
+          </p>
+
+          <h5>Package-level “spatial-profile” attribute</h5>
+          <p>
+            One of:
+          </p>
+
+          <figure>
+<pre><code class="language-json">{
+	"spatial-profile": "tabular-points",
+	"spatial-profile": "simple-vector",
+	"spatial-profile": "raster",
+	"spatial-profile": "vector"
+}</code></pre>
+          </figure>
+
+        </div>
+      </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js"></script>
+    <script src="../js/prism.js"></script>
+    <script src="../js/base.js"></script>
+  </body>
+</html>
